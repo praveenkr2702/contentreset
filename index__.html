@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Katalyst Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #b3ff4d;
+      --black: #0f0f0f;
+      --white: #ffffff;
+      --gray: #cccccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--black);
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .contact-btn {
+      background-color: var(--green);
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+
+    .highlight {
+      background-color: var(--green);
+      color: #000;
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
+    }
+
+    .hero h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .diagonal-bg {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      width: 100vw;
+      height: 300px;
+      background-color: white;
+      transform: skewY(-5deg);
+      z-index: 0;
+    }
+
+    .image-carousel {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 3rem 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 0;
+      max-width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      background-color: white;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      position: relative;
+    }
+
+    .card img {
+      display: block;
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      z-index: 10 !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.3rem;
+      }
+
+      .card img {
+        width: 160px;
+      }
+
+      .card {
+        margin-left: 0 !important;
+        margin-right: 12px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.svg" alt="Katalyst Logo">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <button class="contact-btn">Contact Us</button>
+  </header>
+
+  <section class="hero">
+    <h1><span class="highlight">ContentReset</span> Agency</h1>
+    <h2>Indonesia–Based Digital Agency</h2>
+    <p>
+      Katalyst Design Studio is a dynamic and innovative design agency that brings creative ideas to life.
+      We work with a wide range of clients to develop unique and effective branding, web design, and graphic design solutions.
+    </p>
+  </section>
+
+  <div class="carousel-wrapper">
+    <div class="image-carousel">
+      <div class="card" style="transform: rotate(-6deg); z-index: 1;">
+        <img src="C:\Users\prave\Downloads\imgimg.jpg" alt="Mockup 1" />
+      </div>
+      <div class="card" style="transform: rotate(-3deg); z-index: 2; margin-left: -30px;">
+        <img src="C:\Users\prave\Downloads\imgimg.jpg" alt="Mockup 2" />
+      </div>
+      <div class="card" style="transform: rotate(0deg); z-index: 3; margin-left: -30px;">
+        <img src="C:\Users\prave\Downloads\imgimg.jpg" alt="Mockup 3" />
+      </div>
+      <div class="card" style="transform: rotate(3deg); z-index: 2; margin-left: -30px;">
+        <img src="C:\Users\prave\Downloads\imgimg.jpg" alt="Mockup 4" />
+      </div>
+    </div>
+    <div class="diagonal-bg"></div>
+  </div>
+<!-- Services Section -->
+<section class="services-section" style="padding: 4rem 2rem; background: #fff; color: #000;">
+  <div style="display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 2rem; max-width: 1200px; margin: auto;">
+
+    <!-- Left Panel -->
+    <div class="services-menu">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Our <span style="background: #b3ff4d; padding: 0 0.4rem; font-weight: bold;">Services </span></h2>
+      <p style="font-size: 0.95rem; color: #444; margin-bottom: 2rem;">
+        Katalyst Studio offers a range of design services that are tailored to meet the unique needs of each client
+      </p>
+      <div class="service-tabs">
+        <button class="tab-button active" onclick="changeService(0)"><span>01</span> UI/UX Design</button>
+        <button class="tab-button" onclick="changeService(1)"><span>02</span> Web Development</button>
+        <button class="tab-button" onclick="changeService(2)"><span>03</span> 3D Designs</button>
+        <button class="tab-button" onclick="changeService(3)"><span>04</span> Motion Graphics</button>
+      </div>
+    </div>
+
+    <!-- Center Image + Text -->
+    <div class="main-content">
+      <img id="service-img" src="https://www.cartonionline.com/wordpress/wp-content/uploads/2023/02/goku-814x1024.jpg" style="width: 100%; border-radius: 15px; max-height: 400px; object-fit: cover;" alt="Service Image">
+      <p id="service-text" style="margin-top: 1rem; font-size: 1rem; color: #333;">
+        UI/UX design focuses on enhancing user satisfaction by improving usability and accessibility in the interaction between the user and the product.
+      </p>
+    </div>
+
+    <!-- Right Boxes -->
+    <div class="right-boxes" style="display: flex; flex-direction: column; gap: 1rem;">
+      <div class="box" id="box1" style="background: #222; color: #fff; padding: 1.5rem; border-radius: 12px;">
+        <h4 style="margin-bottom: 0.5rem;">See how we work</h4>
+        <p>Ever wondered how design magic happens?</p>
+      </div>
+      <div class="box" id="box2" style="background: #b3ff4d; color: #000; padding: 1.5rem; border-radius: 12px;">
+        <h4 style="margin-bottom: 0.5rem;">Meet our expert</h4>
+        <p>Looking for design experts who can bring your vision to life?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const data = [
+  {
+    img: "https://www.cartonionline.com/wordpress/wp-content/uploads/2023/02/goku-814x1024.jpg",
+    text: "UI/UX design focuses on enhancing user satisfaction by improving usability and accessibility in the interaction between the user and the product.",
+    box1: { title: "See how we work", desc: "Ever wondered how design magic happens?" },
+    box2: { title: "Meet our expert", desc: "Looking for design experts who can bring your vision to life?" }
+  },
+  {
+    img: "https://via.placeholder.com/600x800/0000FF/FFFFFF?text=Web+Dev",
+    text: "Web Development involves building and maintaining websites for performance, speed, and strong user experiences.",
+    box1: { title: "Our Coding Process", desc: "From design to deploy with clean code." },
+    box2: { title: "Talk to a Developer", desc: "Custom solutions made just for you." }
+  },
+  {
+    img: "https://via.placeholder.com/600x800/FF00FF/FFFFFF?text=3D+Design",
+    text: "3D design gives your ideas a visual form using modeling, rendering, and animation tools.",
+    box1: { title: "Explore in 3D", desc: "Visualize products before they’re made." },
+    box2: { title: "Model with Experts", desc: "Precision modeling with creativity." }
+  },
+  {
+    img: "https://via.placeholder.com/600x800/00FFFF/000000?text=Motion+Graphics",
+    text: "Motion graphics make your stories move. Perfect for ads, intros, and visual storytelling.",
+    box1: { title: "Animate Your Brand", desc: "Bring identity to life through motion." },
+    box2: { title: "Start Moving", desc: "Kickstart your animated content." }
+  }
+];
+
+function changeService(index) {
+  document.getElementById('service-img').src = data[index].img;
+  document.getElementById('service-text').textContent = data[index].text;
+  document.getElementById('box1').querySelector('h4').textContent = data[index].box1.title;
+  document.getElementById('box1').querySelector('p').textContent = data[index].box1.desc;
+  document.getElementById('box2').querySelector('h4').textContent = data[index].box2.title;
+  document.getElementById('box2').querySelector('p').textContent = data[index].box2.desc;
+
+  const buttons = document.querySelectorAll('.tab-button');
+  buttons.forEach((btn, i) => btn.classList.toggle('active', i === index));
+}
+</script>
+
+<style>
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #000;
+}
+.tab-button.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+.tab-button span {
+  font-weight: bold;
+  width: 30px;
+}
+@media (max-width: 900px) {
+  .services-section > div {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+  }
+}
+</style>
+
+</body>
+</html>
